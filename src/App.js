@@ -1,17 +1,17 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
-import NavBar from "./components/Header/NavBar";
-import Sidebar from "./components/SideBar/Sidebar";
+import NavBar from "./Components/Header/NavBar";
+import Sidebar from "./Components/SideBar/Sidebar";
 
-import HomePage from "./pages/HomePage/index";
-import HistoryPage from "./pages/HistoryPage/index";
-import LikedPage from "./pages/LikedPage/index";
-import PlaylistPage from "./pages/PlaylistPage/index";
-import ExplorePage from "./pages/ExplorePage/index";
+import HomePage from "./Pages/HomePage/index";
+import HistoryPage from "./Pages/HistoryPage/index";
+import LikedPage from "./Pages/LikedPage/index";
+import PlaylistPage from "./Pages/PlaylistPage/index";
+import ExplorePage from "./Pages/ExplorePage/index";
 
-import Login from "./pages/AuthenticationPages/login";
-import Signup from "./pages/AuthenticationPages/signup";
+import Login from "./Pages/AuthenticationPages/login";
+import Signup from "./Pages/AuthenticationPages/signup";
 
 function App() {
   return (

@@ -1,9 +1,9 @@
-import './notSignedIn.css'
+import "./notSignedIn.css";
 
 export function NotSignedIn() {
-	return (
-		<div className='container'>
-			<h1>Please Login First</h1>
-		</div>
-	)
+  return (
+    <div className="container">
+      <h1>Please Login First</h1>
+    </div>
+  );
 }

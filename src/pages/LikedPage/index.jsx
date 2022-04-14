@@ -1,5 +1,5 @@
 import React from "react";
-import { NotSignedIn } from "../../components/NotSignedIn";
+import { NotSignedIn } from "../../Components/NotSignedIn/index.jsx";
 import "./liked.css";
 
 const LikedPage = () => {
