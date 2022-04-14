@@ -1,15 +1,17 @@
 .sidebar{
-	margin-top: 10rem;
-	width: 10rem;
+	position: fixed;
+	top: 0.5rem;
+	margin-left: 2rem;
+	margin-top: 14rem;
+	width: 12rem;
 	background-color:var(--bg-color-1);
-	max-height: 46rem;
-	border-radius:0.5rem;
-	position: sticky;
+	max-height: 50rem;
+	border-radius:4rem;
 }
 
 .sidebar-heading{
-	font-size: 1.8rem;
-	margin-left: 2rem;
+	font-size: 2rem;
+	margin-left: 3rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

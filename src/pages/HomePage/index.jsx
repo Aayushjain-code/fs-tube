@@ -4,14 +4,8 @@ import FeaturedCard from "./FeaturedCard";
 const HomePage = () => {
   return (
     <>
-      <main class="flex-r">
+      <main className="flex-r">
         <section className="home">
-          <div className="category-filter">
-            <button className="button btn-success"> All</button>
-            <button className="button btn-success"> Category 1</button>
-            <button className="button btn-success">Category 2</button>
-            <button className="button btn-success">Category 3</button>
-          </div>
           <div>
             <img
               className="banner"
@@ -19,9 +13,14 @@ const HomePage = () => {
               alt=""
             />
             <button className="button btn-success banner-button">
-              {" "}
               Watch Now
             </button>
+          </div>
+          <div className="category-filter">
+            <button className="button btn-success"> All</button>
+            <button className="button btn-success"> Category 1</button>
+            <button className="button btn-success">Category 2</button>
+            <button className="button btn-success">Category 3</button>
           </div>
           <div className="main-container">
             <FeaturedCard />
