@@ -9,7 +9,7 @@ const FeaturedCard = ({ item }) => {
     return word;
   };
   return (
-    <div className="category">
+    <div className="category" key={item._id}>
       <div className="box-container">
         <div className="box">
           <div className="image">

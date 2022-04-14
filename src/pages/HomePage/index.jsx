@@ -6,7 +6,6 @@ const HomePage = () => {
   const [data, setData] = useState([]);
   useEffect(async () => {
     const response = await axios.get("/api/videos");
-    console.log(response);
     setData(response.data.videos);
   }, []);
 
@@ -32,16 +31,8 @@ const HomePage = () => {
           </div>
           <div className="main-container">
             {data.map((item) => {
-              return <FeaturedCard item={item} />;
+              return <FeaturedCard item={item} key={item._id} />;
             })}
-            {/* <FeaturedCard />
-            <FeaturedCard />
-            <FeaturedCard />
-            <FeaturedCard />
-            <FeaturedCard />
-            <FeaturedCard />
-            <FeaturedCard />
-            <FeaturedCard /> */}
           </div>
         </section>
       </main>

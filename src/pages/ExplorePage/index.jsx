@@ -7,7 +7,7 @@ const ExplorePage = () => {
   const [data, setData] = useState([]);
   useEffect(async () => {
     const response = await axios.get("/api/videos");
-    console.log(response);
+    // console.log(response);
     setData(response.data.videos);
   }, []);
 
@@ -23,7 +23,7 @@ const ExplorePage = () => {
 
         <div className="main-container">
           {data.map((item) => {
-            return <FeaturedCard item={item} />;
+            return <FeaturedCard item={item} key={item._id} />;
           })}
         </div>
       </section>
