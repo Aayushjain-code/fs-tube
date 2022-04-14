@@ -1,8 +1,8 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
-import NavBar from "./Components/Header/NavBar";
-import Sidebar from "./Components/SideBar/Sidebar";
+import NavBar from "./Components/Header/NavBar.js";
+import Sidebar from "./Components/SideBar/Sidebar.js";
 
 import HomePage from "./Pages/HomePage/index";
 import HistoryPage from "./Pages/HistoryPage/index";
