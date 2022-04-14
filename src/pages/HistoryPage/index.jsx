@@ -1,6 +1,6 @@
 import React from "react";
 import "./history.css";
-import { NotSignedIn } from "../../Components/NotSignedIn/index.jsx";
+import { NotSignedIn } from "../../components/notSignedIn/index.jsx";
 const HistoryPage = () => {
   return (
     <main className="flex-r">
