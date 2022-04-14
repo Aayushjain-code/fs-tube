@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./home.css";
 import FeaturedCard from "./FeaturedCard";
+import axios from "axios";
 const HomePage = () => {
+  const [data, setData] = useState([]);
+  useEffect(async () => {
+    const response = await axios.get("/api/videos");
+    console.log(response);
+    setData(response.data.videos);
+  }, []);
+
   return (
     <>
       <main className="flex-r">
@@ -12,7 +20,7 @@ const HomePage = () => {
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1uSkKDgMvPF5dBoDyGpuDIioVAaUZ3q4-8A&usqp=CAU"
               alt=""
             />
-            <button className="button btn-success banner-button">
+            <button className="button btn-warning banner-button">
               Watch Now
             </button>
           </div>
@@ -23,14 +31,17 @@ const HomePage = () => {
             <button className="button btn-success">Category 3</button>
           </div>
           <div className="main-container">
+            {data.map((item) => {
+              return <FeaturedCard item={item} />;
+            })}
+            {/* <FeaturedCard />
             <FeaturedCard />
             <FeaturedCard />
             <FeaturedCard />
             <FeaturedCard />
             <FeaturedCard />
             <FeaturedCard />
-            <FeaturedCard />
-            <FeaturedCard />
+            <FeaturedCard /> */}
           </div>
         </section>
       </main>

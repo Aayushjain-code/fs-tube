@@ -7,9 +7,11 @@
 }
 
 .banner-button {
-	width: 20rem;
+	font-size: large;
+	width: 30rem;
+	padding: 1.5rem;
 	position: absolute;
-	top: 20rem;
+	top: 32rem;
 	left: 15rem;
 }
 

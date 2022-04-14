@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import FeaturedCard from "../HomePage/FeaturedCard";
 import "./explore.css";
+import axios from "axios";
 
 const ExplorePage = () => {
+  const [data, setData] = useState([]);
+  useEffect(async () => {
+    const response = await axios.get("/api/videos");
+    console.log(response);
+    setData(response.data.videos);
+  }, []);
+
   return (
     <main className="flex-r">
       <section className="home">
@@ -14,14 +22,9 @@ const ExplorePage = () => {
         </div>
 
         <div className="main-container">
-          <FeaturedCard />
-          <FeaturedCard />
-          <FeaturedCard />
-          <FeaturedCard />
-          <FeaturedCard />
-          <FeaturedCard />
-          <FeaturedCard />
-          <FeaturedCard />
+          {data.map((item) => {
+            return <FeaturedCard item={item} />;
+          })}
         </div>
       </section>
     </main>

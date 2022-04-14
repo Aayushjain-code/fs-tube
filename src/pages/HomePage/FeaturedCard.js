@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./FeaturedCard.css";
-const FeaturedCard = () => {
+const FeaturedCard = ({ item }) => {
   const [dropdown, setDropdown] = useState(false);
   const trimHeading = (word, n) => {
     if (word.length > n) {
@@ -13,25 +13,18 @@ const FeaturedCard = () => {
       <div className="box-container">
         <div className="box">
           <div className="image">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1uSkKDgMvPF5dBoDyGpuDIioVAaUZ3q4-8A&usqp=CAU"
-              alt=""
-            ></img>
+            <img src={item.imageUrl} alt="" />
           </div>
           <div className="content">
             <img
-              class="sm-avatar avatar"
+              className="sm-avatar avatar"
               src="https://boredhumans.b-cdn.net/faces2/606.jpg"
               alt="user"
             />
-            <h4 className="contentTitle">
-              {trimHeading(" Title of the video goes here dsd sdsd", 32)}
-            </h4>
-            <span className="durationVideo">28 Min</span>
-            <span className="creatorName">
-              {trimHeading(" Title of the video goes", 22)}
-            </span>
-            <span className="viewsCount">views count</span>
+            <h4 className="contentTitle">{trimHeading(item.title, 22)}</h4>
+            <span className="durationVideo">{item.timeDuration}</span>
+            <span className="creatorName">{trimHeading(item.author, 22)}</span>
+            <span className="viewsCount">{item.views} Views</span>
             <i
               className="fa-solid fa-ellipsis-vertical icon"
               onClick={() => setDropdown(!dropdown)}
