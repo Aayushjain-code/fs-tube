@@ -4,14 +4,14 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/header/NavBar.js";
 import Sidebar from "./components/sidebar/sidebar.js";
 
-import HomePage from "./Pages/HomePage/index";
-import HistoryPage from "./Pages/HistoryPage/index";
-import LikedPage from "./Pages/LikedPage/index";
-import PlaylistPage from "./Pages/PlaylistPage/index";
-import ExplorePage from "./Pages/ExplorePage/index";
+import HomePage from "./";
+import HistoryPage from "./components/HistoryPage/index";
+import LikedPage from "./pages/LikedPage/index";
+import PlaylistPage from "./pages/PlaylistPage/index";
+import ExplorePage from "./pages/ExplorePage/index";
 
-import Login from "./Pages/AuthenticationPages/login";
-import Signup from "./Pages/AuthenticationPages/signup";
+import Login from "./components/AuthenticationPages/login";
+import Signup from "./components/AuthenticationPages/signup";
 
 function App() {
   return (
