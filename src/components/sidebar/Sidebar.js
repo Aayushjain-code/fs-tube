@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React from "react";
 import "./Sidebar.css";
-const Sidebar = () => {
+const sidebar = () => {
   return (
     <aside className="sidebar">
       <ul className="m1 p1 list-non-bullet ">
@@ -38,4 +38,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default sidebar;
