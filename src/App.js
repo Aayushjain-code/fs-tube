@@ -2,7 +2,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
 import NavBar from "./components/header/NavBar.js";
-import Sidebar from "./components/sideBar/sidebar.js";
+import Sidebar from "./components/sidebar/sidebar.js";
 
 import HomePage from "./Pages/HomePage/index";
 import HistoryPage from "./Pages/HistoryPage/index";
