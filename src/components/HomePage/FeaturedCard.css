@@ -1,0 +1,85 @@
+.content .contentTitle {
+	position: relative;
+	min-width: 20rem;
+	bottom: -0.1rem;
+	font-size: 1.3rem;
+	line-height: 1.5rem;
+}
+
+.avatar {
+	background-color:var(--bg-color-1);
+	position: relative;
+	bottom: 2rem;
+	right: 0.8rem;
+	padding: 0.5rem;
+}
+
+.creatorName {
+	font-size: 1.2rem;
+	font-weight: 500;
+	position: absolute;
+	left: -0.5rem;
+	top: 2.5rem;
+	border-radius: 0.5rem;
+	padding: 0.2rem 0.4rem;
+	background-color: var(--bg-color-2)
+}
+
+.durationVideo {
+	font-weight: 800;
+	position: absolute;
+	left: 10rem;
+	top: 2.5rem;
+	border-radius: 0.5rem;
+	padding: 0.2rem 0.4rem;
+	background-color: var(--bg-color-2)
+}
+
+.viewsCount {
+	position: absolute;
+	right: -3rem;
+	top: 2.5rem;
+	border-radius: 0.5rem;
+	padding: 0.2rem 0.4rem;
+	background-color: var(--bg-color-2)
+}
+
+.icon {
+	font-size: 2.5rem;
+	position: relative;
+	right: -11rem;
+	bottom: 0.5rem;
+}
+
+.card-dropdown {
+	position: absolute;
+	background: var(--bg-color-1);
+	z-index: 2;
+	right: -7rem;
+	bottom: 3rem;
+	/* padding: 0.7rem 1.5rem; */
+}
+
+.card-dropdown>li {
+	font-weight: 800;
+	font-size: 1.2rem;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	border: 1px solid black;
+}
+
+.card-dropdown>li:hover {
+	background-color: var(--bg-color-2);
+}
+
+.card-dropdown>li>.dropIcon {
+	margin-right: 1rem;
+}
+
+.category {
+	min-width: 35rem;
+	border-radius: 0.5rem;
+	border: 0.2rem solid var(--bg-color-2);
+}

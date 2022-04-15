@@ -1,0 +1,22 @@
+.sidebar{
+	position: fixed;
+	top: 0.5rem;
+	margin-left: 2rem;
+	margin-top: 14rem;
+	width: 12rem;
+	background-color:var(--bg-color-1);
+	max-height: 50rem;
+	border-radius:4rem;
+}
+
+.sidebar-heading{
+	font-size: 2rem;
+	margin-left: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 0rem;
+	cursor: pointer;
+	padding-top: 2rem;
+}

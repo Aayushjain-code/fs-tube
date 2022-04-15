@@ -1,0 +1,78 @@
+@import url("https://freshstyleui.netlify.app/styles.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
+
+:root {
+  --primary: #09ff00;
+  --primary-dark: #5a8a00;
+
+  --secondary: #ffc600;
+  --secondary-dark: #ff9100;
+
+  --text-color-1: #444;
+  --text-color-2: #666;
+  --bg-color-1: #fff;
+  --bg-color-2: #eee;
+  --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+
+  --background-color: white;
+  --danger-color: rgb(223, 0, 0);
+}
+
+body {
+  background: var(--bg-color-2);
+}
+
+body.active {
+  --text-color-1: #fff;
+  --text-color-2: #eee;
+  --bg-color-1: #333;
+  --bg-color-2: #222;
+  --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .4);
+}
+
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all .2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5rem;
+}
+
+
+
+section {
+  padding: 2rem 7%;
+}
+
+.heading {
+  text-align: center;
+  padding-bottom: 2rem;
+  color: var(--text-color-1);
+  font-size: 4rem;
+}
