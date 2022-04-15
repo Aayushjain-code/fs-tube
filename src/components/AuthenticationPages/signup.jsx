@@ -104,12 +104,12 @@ const Signup = () => {
           <div className="input-box">
             {toggleShowPassword ? (
               <i
-                className="fas fa-eye icon"
+                className="fas fa-eye iconLogin"
                 onClick={() => setToggleShowPassword(!toggleShowPassword)}
               ></i>
             ) : (
               <i
-                className="fas fa-eye-slash icon"
+                className="fas fa-eye-slash iconLogin"
                 onClick={() => setToggleShowPassword(!toggleShowPassword)}
               ></i>
             )}
@@ -125,12 +125,12 @@ const Signup = () => {
           <div className="input-box">
             {toggleShowConfirmPass ? (
               <i
-                className="fas fa-eye icon"
+                className="fas fa-eye iconLogin"
                 onClick={() => setToggleShowConfirmPass(!toggleShowConfirmPass)}
               ></i>
             ) : (
               <i
-                className="fas fa-eye-slash icon"
+                className="fas fa-eye-slash iconLogin"
                 onClick={() => setToggleShowConfirmPass(!toggleShowConfirmPass)}
               ></i>
             )}

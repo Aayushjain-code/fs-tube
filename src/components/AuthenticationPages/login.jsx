@@ -29,7 +29,7 @@ const Login = () => {
   };
 
   return (
-    <main className="main">
+    <main className="main ">
       <div className="wrapper login-wrapper">
         <h2>Login</h2>
         <form>
@@ -46,12 +46,12 @@ const Login = () => {
           <div className="input-box">
             {toggleShowPassword ? (
               <i
-                className="fas fa-eye icon"
+                className="fas fa-eye iconLogin"
                 onClick={() => setToggleShowPassword(!toggleShowPassword)}
               ></i>
             ) : (
               <i
-                className="fas fa-eye-slash icon"
+                className="fas fa-eye-slash iconLogin"
                 onClick={() => setToggleShowPassword(!toggleShowPassword)}
               ></i>
             )}
