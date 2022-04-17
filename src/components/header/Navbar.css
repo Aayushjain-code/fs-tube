@@ -26,6 +26,7 @@
 
 .header .search-form {
 	background: var(--bg-color-2);
+	color:var(--text-color-1);
 	border-radius: .5rem;
 	display: flex;
 	align-items: center;
@@ -43,10 +44,16 @@
 	padding: 1rem;
 }
 
+.header .search-form input::placeholder {
+
+	color: var(--text-color-1);
+}
 .header .search-form label {
 	font-size: 2rem;
 	margin-right: 1.5rem;
 	color: var(--text-color-1);
+		color:var(--text-color-1);
+
 	cursor: pointer;
 }
 
@@ -157,4 +164,10 @@
 
 .header .login-form .btn {
 	width: 100%;
+}
+
+.userName{
+	font-size: 2rem;
+	color:var(--text-color-1);
+	margin-right: 2rem;
 }

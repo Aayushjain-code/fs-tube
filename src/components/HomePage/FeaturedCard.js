@@ -26,7 +26,7 @@ const FeaturedCard = ({ item }) => {
             <span className="creatorName">{trimHeading(item.author, 22)}</span>
             <span className="viewsCount">{item.views} Views</span>
             <i
-              className="fa-solid fa-ellipsis-vertical icon"
+              className="fa-solid fa-ellipsis-vertical dropDownIcon"
               onClick={() => setDropdown(!dropdown)}
             ></i>
             {dropdown && (

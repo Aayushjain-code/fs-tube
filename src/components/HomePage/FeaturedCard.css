@@ -2,12 +2,14 @@
 	position: relative;
 	min-width: 20rem;
 	bottom: -0.1rem;
-	font-size: 1.3rem;
+	margin-top: 0.5rem;
+	font-size: 1.5rem;
 	line-height: 1.5rem;
+	color: var(--text-color-1);
 }
 
 .avatar {
-	background-color:var(--bg-color-1);
+	background-color: var(--bg-color-1);
 	position: relative;
 	bottom: 2rem;
 	right: 0.8rem;
@@ -22,7 +24,8 @@
 	top: 2.5rem;
 	border-radius: 0.5rem;
 	padding: 0.2rem 0.4rem;
-	background-color: var(--bg-color-2)
+	color: var(--text-color-1);
+	background-color: var(--bg-color-3)
 }
 
 .durationVideo {
@@ -32,7 +35,8 @@
 	top: 2.5rem;
 	border-radius: 0.5rem;
 	padding: 0.2rem 0.4rem;
-	background-color: var(--bg-color-2)
+	color: var(--text-color-1);
+	background-color: var(--bg-color-3)
 }
 
 .viewsCount {
@@ -41,19 +45,22 @@
 	top: 2.5rem;
 	border-radius: 0.5rem;
 	padding: 0.2rem 0.4rem;
-	background-color: var(--bg-color-2)
+	color: var(--text-color-1);
+	background-color: var(--bg-color-3)
 }
 
-.icon {
+.dropDownIcon {
+	color: var(--text-color-1);
 	font-size: 2.5rem;
 	position: relative;
-	right: -11rem;
-	bottom: 0.5rem;
+	right: -4rem;
+	bottom: -1.5rem;
 }
 
 .card-dropdown {
 	position: absolute;
-	background: var(--bg-color-1);
+	color: var(--text-color-1);
+	background-color: var(--bg-color-3);
 	z-index: 2;
 	right: -7rem;
 	bottom: 3rem;
@@ -81,5 +88,10 @@
 .category {
 	min-width: 35rem;
 	border-radius: 0.5rem;
-	border: 0.2rem solid var(--bg-color-2);
+	padding: 0.1rem;
+	border: 0.2rem solid var(--bg-color-3);
 }
+
+/* .box{
+	padding: 2.5rem !important;
+} */
