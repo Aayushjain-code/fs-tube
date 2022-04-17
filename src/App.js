@@ -12,6 +12,8 @@ import ExplorePage from "./components/ExplorePage/index";
 
 import Login from "./components/AuthenticationPages/login";
 import Signup from "./components/AuthenticationPages/signup";
+import { RestrictAuth } from "./components/ReqResAuth/RestrictAuth";
+import { RequireAuth } from "./components/ReqResAuth/RequireAuth";
 
 function App() {
   return (
@@ -20,13 +22,18 @@ function App() {
       <Sidebar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/history" element={<HistoryPage />} />
+
         <Route path="/liked" element={<LikedPage />} />
         <Route path="/playlist" element={<PlaylistPage />} />
         <Route path="/explore" element={<ExplorePage />} />
 
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route element={<RestrictAuth />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Route>
+        <Route element={<RequireAuth />}>
+          <Route path="/history" element={<HistoryPage />} />
+        </Route>
       </Routes>
     </div>
   );

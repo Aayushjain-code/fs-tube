@@ -1,20 +1,22 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context/authContext";
 import "./auth.css";
 
 const Login = () => {
-  // const { login, testLogin } = useAuth();
+  const { authErrorMsg, login, testLogin } = useAuth();
 
   const [userDetails, setUserDetails] = useState({ email: "", password: "" });
   const [error, setError] = useState({ isError: false, text: "" });
   const [toggleShowPassword, setToggleShowPassword] = useState(true);
 
-  // useEffect(() => {
-  // 	const timeOutId = setTimeout(() => {
-  // 		setError({ isError: false, text: '' })
-  // 	}, 3000)
-  // 	return () => clearTimeout(timeOutId)
-  // }, [error])
+  useEffect(() => {
+    const timeoutID = setTimeout(() => {
+      setError({ ...error, isError: false });
+    }, 3000);
+
+    return () => clearTimeout(timeoutID);
+  }, [error]);
 
   const loginHandler = (e) => {
     e.preventDefault();
@@ -23,7 +25,7 @@ const Login = () => {
     } else if (!userDetails.email.includes("@")) {
       setError({ isError: true, text: "Invalid Email-Id" });
     } else {
-      // login(userDetails)
+      login(userDetails);
       setUserDetails({ email: "", password: "" });
     }
   };
@@ -31,6 +33,8 @@ const Login = () => {
   return (
     <main className="main ">
       <div className="wrapper login-wrapper">
+        {error.isError ? <p className="error">{error.text}</p> : null}
+        {authErrorMsg ? <p className="error">{authErrorMsg}</p> : null}
         <h2>Login</h2>
         <form>
           <div className="input-box">
@@ -68,7 +72,9 @@ const Login = () => {
           <div className="button" onClick={(e) => loginHandler(e)}>
             Login Now
           </div>
-          <div className="button">Test Login</div>
+          <div className="button" onClick={() => testLogin()}>
+            Test Login
+          </div>
           <div className="text">
             <h3>
               Not having an account? <Link to="/signup"> Signup now </Link>{" "}
