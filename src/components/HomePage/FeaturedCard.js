@@ -17,7 +17,7 @@ const FeaturedCard = ({ item }) => {
           </div>
           <div className="content">
             <img
-              className="sm-avatar avatar"
+              className="md-avatar avatar"
               src="https://boredhumans.b-cdn.net/faces2/606.jpg"
               alt="user"
             />

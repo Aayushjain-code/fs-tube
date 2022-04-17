@@ -1,26 +1,28 @@
-.content .contentTitle {
-	position: relative;
-	min-width: 20rem;
-	bottom: -0.1rem;
-	margin-top: 0.5rem;
-	font-size: 1.5rem;
-	line-height: 1.5rem;
-	color: var(--text-color-1);
-}
-
 .avatar {
 	background-color: var(--bg-color-1);
 	position: relative;
 	bottom: 2rem;
-	right: 0.8rem;
-	padding: 0.5rem;
+	right: 1rem;
+	padding: 0.6rem;
 }
 
+
+.content .contentTitle {
+	position: relative;
+	min-width: 20rem;
+	bottom: -0.1rem;
+	margin-top: 0.7rem;
+	font-size: 1.6rem;
+	line-height: 1.5rem;
+	color: var(--text-color-1);
+}
+
+
 .creatorName {
-	font-size: 1.2rem;
+	font-size: 1.4rem;
 	font-weight: 500;
 	position: absolute;
-	left: -0.5rem;
+	left: 5rem;
 	top: 2.5rem;
 	border-radius: 0.5rem;
 	padding: 0.2rem 0.4rem;
@@ -29,9 +31,10 @@
 }
 
 .durationVideo {
+	font-size: 1.2rem;
 	font-weight: 800;
 	position: absolute;
-	left: 10rem;
+	left: 12rem;
 	top: 2.5rem;
 	border-radius: 0.5rem;
 	padding: 0.2rem 0.4rem;
@@ -40,6 +43,7 @@
 }
 
 .viewsCount {
+	font-size: 1.2rem;
 	position: absolute;
 	right: -3rem;
 	top: 2.5rem;
@@ -92,6 +96,3 @@
 	border: 0.2rem solid var(--bg-color-3);
 }
 
-/* .box{
-	padding: 2.5rem !important;
-} */
