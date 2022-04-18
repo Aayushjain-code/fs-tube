@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context/authContext";
 import "./auth.css";
 
 const Signup = () => {
-  // const { signup } = useAuth()
+  const { authErrorMsg, signup } = useAuth();
   const [userDetails, setUserDetails] = useState({
     firstName: "",
     lastName: "",
@@ -18,12 +19,13 @@ const Signup = () => {
   const [toggleShowPassword, setToggleShowPassword] = useState(true);
   const [toggleShowConfirmPass, setToggleShowConfirmPass] = useState(true);
 
-  // useEffect(() => {
-  // 	const timeOutId = setTimeout(() => {
-  // 		setError({ isError: false, text: '' })
-  // 	}, 3000)
-  // 	return () => clearTimeout(timeOutId);
-  // }, [error])
+  useEffect(() => {
+    const timeoutID = setTimeout(() => {
+      setError({ ...error, isError: false });
+    }, 3000);
+
+    return () => clearTimeout(timeoutID);
+  }, [error]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -53,6 +55,7 @@ const Signup = () => {
     } else if (!userDetails.terms) {
       setError({ isError: true, text: "Please accept terms and conditions!!" });
     } else {
+      signup(userDetails);
       setUserDetails({
         firstName: "",
         lastName: "",
@@ -66,7 +69,8 @@ const Signup = () => {
   return (
     <main className="main">
       <div className="wrapper">
-        {error && <p className="error">{error.text}</p>}
+        {error.isError ? <p className="error">{error.text}</p> : null}
+        {authErrorMsg ? <p className="error">{authErrorMsg}</p> : null}
         <h2>Sign-Up</h2>
         <form>
           <div className="input-box">

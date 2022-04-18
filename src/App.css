@@ -6,9 +6,9 @@ main {
 	min-height: 60rem;
 	margin-top: 5rem;
 	margin-left: 18rem;
-	background-color: var(--background-color);
+	background-color: var(--bg-color-3);
 	object-fit: cover;
-	border-radius:5rem;
+	border-radius:2rem;
 }
 
 img {
@@ -16,4 +16,8 @@ img {
 	max-height: 100%;
 	margin: auto;
 	display: block;
+}
+
+.flex-r{
+	background-color:var(--bg-color-3)
 }

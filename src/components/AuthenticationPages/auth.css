@@ -5,6 +5,7 @@
 }
 
 
+
 .wrapper {
 	max-width: 40rem;
 	margin-top: 2rem;
@@ -47,7 +48,7 @@ form .input-box input {
 	padding: 0 1rem;
 	font-size: 1.6rem;
 	font-weight: 400;
-	color: var(--text-color-1);
+	color: var(--text-color-3);
 	border: 0.1rem solid var(--text-color-2);
 	border-radius: 0.5rem;
 	transition: all 0.3s ease;

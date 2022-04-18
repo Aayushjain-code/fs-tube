@@ -19,4 +19,5 @@
 	max-width: 0rem;
 	cursor: pointer;
 	padding-top: 2rem;
+	color: var(--text-color-1);
 }
