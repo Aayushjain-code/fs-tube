@@ -1,30 +1,70 @@
 import React, { useState, useEffect } from "react";
 import FeaturedCard from "../HomePage/FeaturedCard";
 import "./explore.css";
-import axios from "axios";
+import { useVideo } from "../../context/videoContext";
+import { useCategory } from "../../context/categoryContext";
+import Loader from "../../assets/loader/Loader";
 
 const ExplorePage = () => {
-  const [data, setData] = useState([]);
-  useEffect(async () => {
-    const response = await axios.get("/api/videos");
-    // console.log(response);
-    setData(response.data.videos);
+  const { getAllVideos, allVideos, cardLoading, cardError } = useVideo();
+  const {
+    getCategories,
+    categoryData,
+    ischipLoading,
+    chipError,
+    selectedCategory,
+    setSelectedCategory,
+  } = useCategory();
+
+  const [filteredVideos, setFilteredVideos] = useState([]);
+
+  useEffect(() => {
+    getCategories();
+    getAllVideos();
   }, []);
+
+  useEffect(() => {
+    let tempVideos = [...allVideos];
+    if (selectedCategory == "All") {
+      setFilteredVideos(tempVideos);
+    } else {
+      tempVideos = tempVideos.filter(
+        (item) => item.category === selectedCategory
+      );
+      setFilteredVideos(tempVideos);
+    }
+  }, [selectedCategory]);
 
   return (
     <main className="flex-r">
       <section className="home">
-        <div className="category-filter2">
-          <button className="button btn-success"> All</button>
-          <button className="button btn-success"> Category 1</button>
-          <button className="button btn-success">Category 2</button>
-          <button className="button btn-success">Category 3</button>
-        </div>
-
+        {!ischipLoading ? (
+          categoryData.map((item) => (
+            <button
+              className="button btn-success"
+              key={item._id}
+              onClick={() => setSelectedCategory(item.categoryName)}
+            >
+              {item.categoryName}
+            </button>
+          ))
+        ) : (
+          <Loader />
+        )}
         <div className="main-container">
-          {data.map((item) => {
-            return <FeaturedCard item={item} key={item._id} />;
-          })}
+          {!cardLoading ? (
+            filteredVideos.length > 0 ? (
+              filteredVideos.map((item) => (
+                <FeaturedCard item={item} key={item._id} />
+              ))
+            ) : (
+              allVideos.map((item) => (
+                <FeaturedCard item={item} key={item._id} />
+              ))
+            )
+          ) : (
+            <Loader />
+          )}
         </div>
       </section>
     </main>

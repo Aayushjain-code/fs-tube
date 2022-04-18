@@ -1,13 +1,32 @@
 import React, { useEffect, useState } from "react";
 import "./home.css";
 import FeaturedCard from "./FeaturedCard";
-import axios from "axios";
+
+import Loader from "../../assets/loader/Loader.js";
+import { useVideo } from "../../context/videoContext.js";
+import { useCategory } from "../../context/categoryContext.js";
+import { useNavigate, Link } from "react-router-dom";
+
 const HomePage = () => {
-  const [data, setData] = useState([]);
-  useEffect(async () => {
-    const response = await axios.get("/api/videos");
-    setData(response.data.videos);
+  let Navigate = useNavigate();
+  const { getAllVideos, allVideos, cardLoading, cardError } = useVideo();
+  const {
+    getCategories,
+    categoryData,
+    ischipLoading,
+    chipError,
+    selectedCategory,
+    setSelectedCategory,
+  } = useCategory();
+
+  let mustWatchVideos = [];
+  useEffect(() => {
+    getCategories();
+    getAllVideos();
   }, []);
+
+  const getMustWatchVideos = () => allVideos.filter((item) => item.isMustWatch);
+  mustWatchVideos = getMustWatchVideos();
 
   return (
     <>
@@ -20,19 +39,39 @@ const HomePage = () => {
               alt=""
             />
             <button className="button btn-warning banner-button">
-              Watch Now
+              <Link className="btn-hero font-bold text-base" to="/explore">
+                Watch Now
+              </Link>
             </button>
           </div>
+
           <div className="category-filter">
-            <button className="button btn-success"> All</button>
-            <button className="button btn-success"> Category 1</button>
-            <button className="button btn-success">Category 2</button>
-            <button className="button btn-success">Category 3</button>
+            {!ischipLoading ? (
+              categoryData.map((item) => (
+                <button
+                  className="button btn-success"
+                  key={item._id}
+                  onClick={() => {
+                    setSelectedCategory(item.categoryName);
+                    Navigate("/explore");
+                  }}
+                >
+                  {item.categoryName}
+                </button>
+              ))
+            ) : (
+              <Loader />
+            )}
           </div>
+
           <div className="main-container">
-            {data.map((item) => {
-              return <FeaturedCard item={item} key={item._id} />;
-            })}
+            {!cardLoading ? (
+              mustWatchVideos.map((item) => (
+                <FeaturedCard item={item} key={item._id} />
+              ))
+            ) : (
+              <Loader />
+            )}
           </div>
         </section>
       </main>
