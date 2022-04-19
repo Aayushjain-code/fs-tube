@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import FeaturedCard from "../HomePage/FeaturedCard";
+import ExploreCard from "./exploreCard.js";
 import "./explore.css";
 import { useVideo } from "../../context/videoContext";
 import { useCategory } from "../../context/categoryContext";
@@ -55,11 +55,11 @@ const ExplorePage = () => {
           {!cardLoading ? (
             filteredVideos.length > 0 ? (
               filteredVideos.map((item) => (
-                <FeaturedCard item={item} key={item._id} />
+                <ExploreCard item={item} key={item._id} />
               ))
             ) : (
               allVideos.map((item) => (
-                <FeaturedCard item={item} key={item._id} />
+                <ExploreCard item={item} key={item._id} />
               ))
             )
           ) : (

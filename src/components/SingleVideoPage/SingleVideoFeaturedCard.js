@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./FeaturedCard.css";
-import { useWatchLater } from "../../context/watchLaterContext";
-import { useHistory } from "../../context/historyContext";
 
-const FeaturedCard = ({ item }) => {
+const SingleVideoFeaturedCard = ({ item }) => {
   const [dropdown, setDropdown] = useState(false);
   const trimHeading = (word, n) => {
     if (word.length > n) {
@@ -12,28 +9,11 @@ const FeaturedCard = ({ item }) => {
     }
     return word;
   };
-
-  const {
-    getWatchLaterVideos,
-    removeItemFromWatchLater,
-    addItemToWatchLater,
-    watchLaterVideos,
-  } = useWatchLater();
-
-  const { addVideoToHistory } = useHistory();
-
-  useEffect(() => {
-    getWatchLaterVideos();
-  }, []);
-
   return (
     <div className="category" key={item._id}>
       <div className="box-container">
         <div className="box">
-          <Link
-            to={`/singlevideo/${item._id}`}
-            onClick={() => addVideoToHistory(item)}
-          >
+          <Link to={`/singlevideo/${item._id}`}>
             <div className="image">
               <img src={item.imageUrl} alt="" />
             </div>
@@ -70,4 +50,4 @@ const FeaturedCard = ({ item }) => {
   );
 };
 
-export default FeaturedCard;
+export default SingleVideoFeaturedCard;

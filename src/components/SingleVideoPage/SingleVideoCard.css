@@ -1,0 +1,90 @@
+/* .singleVideoCard{
+	border: 0.01rem solid var(--text-color-1);
+	padding: 2rem;
+} */
+
+.singleVid-avatar {
+	background-color: var(--bg-color-1);
+	position: relative;
+	top: 1rem;
+	right: 32rem;
+	z-index: 1;
+}
+
+
+.singleVid-contentTitle {
+	position: relative;
+	bottom: 0rem;
+	margin-top: 1.5rem;
+	font-size: 3rem;
+	line-height: 1.5rem;
+	color: var(--text-color-1);
+}
+
+
+.singleVid-creatorName {
+	font-size: 1.8rem;
+	font-weight: 500;
+	position: relative;
+	min-width: 20rem;
+	bottom: 5rem;
+	left: 0.1rem;
+	z-index: 0;
+	margin-top: 1.5rem;
+	border-radius: 0.2rem;
+	padding: 0.2rem 0.4rem;
+	color: var(--text-color-1);
+	background-color: var(--bg-color-3)
+}
+
+.singleVid-durationVideo {
+	font-size: 1.2rem;
+	font-weight: 800;
+	position: relative;
+	bottom: 2rem;
+	left: 18rem;
+	margin-top: 1.5rem;
+	border-radius: 0.2rem;
+	padding: 0.2rem 0.4rem;
+	color: var(--text-color-1);
+	background-color: var(--bg-color-3)
+}
+
+.singleVid-viewsCount {
+	font-size: 1.2rem;
+	position: relative;
+	bottom: 2rem;
+	left: 14rem;
+	font-weight: 600;
+	margin-top: 1.5rem;
+	border-radius: 0.2rem;
+	padding: 0.2rem 0.4rem;
+	color: var(--text-color-1);
+	background-color: var(--bg-color-3)
+}
+
+.singleVid-description {
+	font-size: 1.6rem;
+	margin-left: 2rem;
+	width: 95%;
+	position: relative;
+	bottom: 4rem;
+	left: 0rem;
+	margin-top: 1.5rem;
+	border-radius: 0.5rem;
+	padding: 0.2rem 1rem;
+	color: var(--text-color-1);
+	background-color: var(--bg-color-3)
+}
+
+
+.btn-with-icon {
+	position: relative;
+	bottom: 5rem;
+	left: 15rem;
+}
+
+.btn-with-icon :hover {
+
+	background-color: var(--primary) !important;
+}

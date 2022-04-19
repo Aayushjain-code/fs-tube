@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./home.css";
-import FeaturedCard from "./FeaturedCard";
+import FeaturedCard from "./FeaturedCard.js";
 
 import Loader from "../../assets/loader/Loader.js";
 import { useVideo } from "../../context/videoContext.js";

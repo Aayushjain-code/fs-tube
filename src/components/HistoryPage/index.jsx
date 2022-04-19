@@ -1,14 +1,75 @@
-import React from "react";
+import { useEffect } from "react";
 import "./history.css";
+import { useHistory } from "../../context/historyContext";
+import LoaderSvg from "../../assets/loader/Loader";
+import HistoryCard from "./HistoryCard";
 const HistoryPage = () => {
+  const {
+    getHistoryVideos,
+    clearHistory,
+    HistoryData,
+    isHistoryLoading,
+    HistoryError,
+  } = useHistory();
+
+  useEffect(() => {
+    getHistoryVideos();
+  }, []);
   return (
     <main className="flex-r">
-      <div className="doc-content">
-        <section>
-          <h5 className="component-subheading">HistoryPage</h5>
-        </section>
-      </div>
+      <section className="home">
+        {HistoryData.length > 0 ? (
+          <div className="position-relative">
+            <button className="button btn-error" onClick={() => clearHistory()}>
+              Clear All
+            </button>
+
+            <h4 className="pdl-3 pdt-3 font-semibold">
+              History{" : "}
+              <span>
+                {HistoryData.length === 1
+                  ? "1 video"
+                  : `${HistoryData.length} videos`}
+              </span>
+            </h4>
+          </div>
+        ) : (
+          <h4 className="pdl-3 pdt-3 font-semibold">History Empty</h4>
+        )}
+        <div className="main-container">
+          {isHistoryLoading ? (
+            <LoaderSvg />
+          ) : HistoryData.length > 0 ? (
+            HistoryData.map((item) => (
+              <HistoryCard key={item._id} item={item} />
+            ))
+          ) : (
+            ""
+          )}
+        </div>
+      </section>
     </main>
+
+    /* {HistoryData.length > 0 ? (
+        <div className="position-relative">
+          <button
+            className="btn-clear-all font-semibold"
+            onClick={() => clearHistory()}
+          >
+            Clear All
+          </button>
+          <h4 className="pdl-3 pdt-3 font-semibold">
+            History{" "}
+            <small className="text-base font-normal pdl-0-5">
+              {HistoryData.length === 1
+                ? "1 video"
+                : `${HistoryData.length} videos`}
+            </small>
+          </h4>
+        </div>
+      ) : (
+        <h4 className="pdl-3 pdt-3 font-semibold">History Empty</h4>
+      )} */
   );
 };
 
