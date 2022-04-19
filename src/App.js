@@ -9,20 +9,24 @@ import HistoryPage from "./components/HistoryPage/index";
 import LikedPage from "./components/LikedPage/index";
 import PlaylistPage from "./components/PlaylistPage/index";
 import ExplorePage from "./components/ExplorePage/index";
+import WatchLaterPage from "./components/WatchLaterPage/index";
 
 import Login from "./components/AuthenticationPages/login";
 import Signup from "./components/AuthenticationPages/signup";
 import { RestrictAuth } from "./components/ReqResAuth/RestrictAuth";
 import { RequireAuth } from "./components/ReqResAuth/RequireAuth";
+import SingleVideoPage from "./components/SingleVideoPage/SingleVideo";
 
 function App() {
   const location = useLocation();
   return (
     <div className="App">
-      {location.pathname === "/" ||
+      {/* {location.pathname === "/" ||
       location.pathname === "/liked" ||
       location.pathname === "/playlist" ||
       location.pathname === "/history" ||
+      location.pathname === "/singlevideo/:videoId" ||
+      location.pathname === "/watchlater" ||
       location.pathname === "/explore" ? (
         <NavBar />
       ) : null}
@@ -31,9 +35,13 @@ function App() {
       location.pathname === "/liked" ||
       location.pathname === "/playlist" ||
       location.pathname === "/history" ||
+      location.pathname === "/watchlater" ||
+      location.pathname === "/singlevideo/:videoId" ||
       location.pathname === "/explore" ? (
         <Sidebar />
-      ) : null}
+      ) : null} */}
+      <NavBar />
+      <Sidebar />
 
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -41,6 +49,8 @@ function App() {
         <Route path="/liked" element={<LikedPage />} />
         <Route path="/playlist" element={<PlaylistPage />} />
         <Route path="/explore" element={<ExplorePage />} />
+        <Route path="/watchlater" element={<WatchLaterPage />} />
+        <Route path="/singlevideo/:videoId" element={<SingleVideoPage />} />
 
         <Route element={<RestrictAuth />}>
           <Route path="/login" element={<Login />} />
