@@ -20,9 +20,14 @@ const sidebar = () => {
             <i className="fa-solid fa-list"></i>Playlist
           </p>
         </Link>
+        <Link to="/watchlater">
+          <p className="sidebar-heading link text-decor-none">
+            <i className="fa-regular fa-clock"></i>Watchlater
+          </p>
+        </Link>
         <Link to="/history">
           <p className="sidebar-heading link text-decor-none">
-            <i className="fa-regular fa-clock"></i>History
+            <i class="fa-solid fa-clock-rotate-left"></i>History
           </p>
         </Link>
         <Link to="/liked">
