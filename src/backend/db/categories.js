@@ -7,14 +7,14 @@ export const categories = [
   },
   {
     _id: uuid(),
-    categoryName: "A",
+    categoryName: "Breakfast",
   },
   {
     _id: uuid(),
-    categoryName: "B",
+    categoryName: "Lunch",
   },
   {
     _id: uuid(),
-    categoryName: "C",
+    categoryName: "Dinner",
   },
 ];
