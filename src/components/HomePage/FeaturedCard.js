@@ -6,13 +6,14 @@ import { useHistory } from "../../context/historyContext";
 
 const FeaturedCard = ({ item }) => {
   const [dropdown, setDropdown] = useState(false);
+
   const trimHeading = (word, n) => {
     if (word.length > n) {
       return word.substring(0, n - 3) + "...";
     }
     return word;
   };
-
+  // const { _id, title, thumbnail, channel, profile, views, playbackTime } = item;
   const {
     getWatchLaterVideos,
     removeItemFromWatchLater,
@@ -54,10 +55,19 @@ const FeaturedCard = ({ item }) => {
             ></i>
             {dropdown && (
               <ul className="card-dropdown">
-                <li>
-                  <i className="fa-regular fa-clock dropIcon"></i>Add to watch
-                  later
+                {/* {watchLaterVideos.some((it) => it._id === item._id) ? (
+                  <li onClick={() => removeItemFromWatchLater(item._id)}>
+                    {console.log("i", it)}
+                    <i className="fa-regular fa-clock dropIcon"></i>Remove from
+                    Watch Later
+                  </li>
+                ) : ( */}
+                <li onClick={() => addItemToWatchLater(item._id)}>
+                  <i className="fa-regular fa-clock dropIcon"></i> Add to Watch
+                  Later
                 </li>
+                {/* )} */}
+
                 <li>
                   <i className="fa-solid fa-list dropIcon"></i>Add to playlist
                 </li>

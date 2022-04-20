@@ -27,7 +27,7 @@ const sidebar = () => {
         </Link>
         <Link to="/history">
           <p className="sidebar-heading link text-decor-none">
-            <i class="fa-solid fa-clock-rotate-left"></i>History
+            <i className="fa-solid fa-clock-rotate-left"></i>History
           </p>
         </Link>
         <Link to="/liked">

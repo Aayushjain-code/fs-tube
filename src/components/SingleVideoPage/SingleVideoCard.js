@@ -53,11 +53,11 @@ const SingleVideoCard = ({ singleVideo }) => {
           </span>
 
           <button className="m1 button btn-primary btn-with-icon">
-            <i class="p1-right fa-solid fa-thumbs-up"></i>Add to Liked
+            <i className="p1-right fa-solid fa-thumbs-up"></i>Add to Liked
           </button>
 
           <button className="m1 button btn-success btn-with-icon">
-            <i class="p1-right fa-regular fa-clock"></i>Add to Watchlater
+            <i className="p1-right fa-regular fa-clock"></i>Add to Watchlater
           </button>
           <p className="singleVid-description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
