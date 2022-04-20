@@ -55,18 +55,15 @@ const FeaturedCard = ({ item }) => {
             ></i>
             {dropdown && (
               <ul className="card-dropdown">
-                {/* {watchLaterVideos.some((it) => it._id === item._id) ? (
-                  <li onClick={() => removeItemFromWatchLater(item._id)}>
-                    {console.log("i", it)}
-                    <i className="fa-regular fa-clock dropIcon"></i>Remove from
-                    Watch Later
-                  </li>
-                ) : ( */}
-                <li onClick={() => addItemToWatchLater(item._id)}>
+                <li
+                  onClick={
+                    (() => addItemToWatchLater(item._id),
+                    console.log("clicked", item))
+                  }
+                >
                   <i className="fa-regular fa-clock dropIcon"></i> Add to Watch
                   Later
                 </li>
-                {/* )} */}
 
                 <li>
                   <i className="fa-solid fa-list dropIcon"></i>Add to playlist

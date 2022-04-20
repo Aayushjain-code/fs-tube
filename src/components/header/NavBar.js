@@ -1,10 +1,11 @@
 import React from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/authContext";
 import { useThemeContext } from "../../context/themeContext";
 
 const NavBar = () => {
+  const Navigate = useNavigate();
   const { authData, logout } = useAuth();
   const { theme, toggleLightDarkTheme } = useThemeContext();
 
@@ -37,11 +38,25 @@ const NavBar = () => {
             id="theme-btn"
           ></div>
 
-          <div
-            className="fas fa-user"
-            id="menu-btn"
-            onClick={() => logout()}
-          ></div>
+          {localStorage.getItem("videoToken") ? (
+            <div
+              className="fas  large-Nav-Icon"
+              id="menu-btn"
+              onClick={() => logout()}
+            >
+              Logout
+              <i class="fas fa-user fasIcon"></i>
+            </div>
+          ) : (
+            <div
+              className="fas large-Nav-Icon"
+              id="menu-btn"
+              onClick={() => Navigate("/login")}
+            >
+              Login
+              <i class="fa-solid fa-fingerprint fasIcon"></i>
+            </div>
+          )}
         </div>
       </header>
     </div>

@@ -49,7 +49,6 @@ function App() {
         <Route path="/liked" element={<LikedPage />} />
         <Route path="/playlist" element={<PlaylistPage />} />
         <Route path="/explore" element={<ExplorePage />} />
-        <Route path="/watchlater" element={<WatchLaterPage />} />
         <Route path="/singlevideo/:videoId" element={<SingleVideoPage />} />
 
         <Route element={<RestrictAuth />}>
@@ -57,6 +56,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
         </Route>
         <Route element={<RequireAuth />}>
+          <Route path="/watchlater" element={<WatchLaterPage />} />
           <Route path="/history" element={<HistoryPage />} />
         </Route>
       </Routes>
