@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from "../../context/historyContext";
 const HistoryCard = ({ item }) => {
   const [dropdown, setDropdown] = useState(false);
   const trimHeading = (word, n) => {
@@ -8,6 +9,7 @@ const HistoryCard = ({ item }) => {
     }
     return word;
   };
+  const { removeVideoFromHistory } = useHistory();
   return (
     <div className="category" key={item._id}>
       <div className="box-container">
@@ -33,12 +35,9 @@ const HistoryCard = ({ item }) => {
             ></i>
             {dropdown && (
               <ul className="card-dropdown">
-                <li>
-                  <i className="fa-regular fa-clock dropIcon"></i>Add to watch
-                  later
-                </li>
-                <li>
-                  <i className="fa-solid fa-list dropIcon"></i>Add to playlist
+                <li onClick={() => removeVideoFromHistory(item._id)}>
+                  <i className="fa-regular fa-clock dropIcon"></i>Remove From
+                  History
                 </li>
               </ul>
             )}
