@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useWatchLater } from "../../context/watchLaterContext";
+import { useHistory } from "../../context/historyContext";
 
 const SingleVideoFeaturedCard = ({ item }) => {
   const [dropdown, setDropdown] = useState(false);
@@ -9,11 +11,27 @@ const SingleVideoFeaturedCard = ({ item }) => {
     }
     return word;
   };
+  const {
+    getWatchLaterVideos,
+    removeItemFromWatchLater,
+    addItemToWatchLater,
+    watchLaterVideos,
+  } = useWatchLater();
+
+  const { addVideoToHistory } = useHistory();
+
+  useEffect(() => {
+    getWatchLaterVideos();
+  }, []);
+
   return (
     <div className="category" key={item._id}>
       <div className="box-container">
         <div className="box">
-          <Link to={`/singlevideo/${item._id}`}>
+          <Link
+            to={`/singlevideo/${item._id}`}
+            onClick={() => addVideoToHistory(item)}
+          >
             <div className="image">
               <img src={item.imageUrl} alt="" />
             </div>
