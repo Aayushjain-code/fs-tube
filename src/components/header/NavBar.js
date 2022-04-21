@@ -14,7 +14,7 @@ const NavBar = () => {
       <header className="header">
         <Link to="/" className="logo">
           {" "}
-          <i className="fab fa-canadian-maple-leaf"></i> Fresh-Tube
+          <i className="fab fa-canadian-maple-leaf"></i> Fresh Recipes Player
         </Link>
 
         <form action="" className="search-form">
