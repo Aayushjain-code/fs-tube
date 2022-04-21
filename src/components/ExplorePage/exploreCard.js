@@ -48,12 +48,21 @@ const ExploreCard = ({ item }) => {
               className="fa-solid fa-ellipsis-vertical dropDownIcon"
               onClick={() => setDropdown(!dropdown)}
             ></i>
+
             {dropdown && (
               <ul className="card-dropdown">
-                <li>
-                  <i className="fa-regular fa-clock dropIcon"></i>Add to watch
-                  later
-                </li>
+                {watchLaterVideos.some((it) => it._id === item._id) ? (
+                  <li onClick={() => removeItemFromWatchLater(item._id)}>
+                    <i className="fa-regular fa-clock dropIcon"></i>
+                    Remove to watch later
+                  </li>
+                ) : (
+                  <li onClick={() => addItemToWatchLater(item)}>
+                    <i className="fa-regular fa-clock dropIcon"></i>
+                    Add to watch later
+                  </li>
+                )}
+                {/* TO be done */}
                 <li>
                   <i className="fa-solid fa-list dropIcon"></i>Add to playlist
                 </li>
