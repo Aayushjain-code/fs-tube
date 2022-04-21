@@ -65,6 +65,7 @@ const WatchLaterProvider = ({ children }) => {
   };
 
   const removeItemFromWatchLater = async (_id) => {
+    console.log("hello");
     dispatch({ type: "LOADING" });
     try {
       const response = await axios.delete(

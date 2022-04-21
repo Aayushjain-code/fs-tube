@@ -56,9 +56,22 @@ const SingleVideoCard = ({ singleVideo }) => {
             <i className="p1-right fa-solid fa-thumbs-up"></i>Add to Liked
           </button>
 
-          <button className="m1 button btn-success btn-with-icon">
-            <i className="p1-right fa-regular fa-clock"></i>Add to Watchlater
-          </button>
+          {watchLaterVideos.some((it) => it._id === singleVideo._id) ? (
+            <button
+              className="m1 button btn-success btn-with-icon"
+              onClick={() => removeItemFromWatchLater(singleVideo._id)}
+            >
+              <i className="p1-right fa-regular fa-clock"></i>Remove from
+              Watchlater
+            </button>
+          ) : (
+            <button
+              className="m1 button btn-success btn-with-icon"
+              onClick={() => addItemToWatchLater(singleVideo)}
+            >
+              <i className="p1-right fa-regular fa-clock"></i>Add to Watchlater
+            </button>
+          )}
           <p className="singleVid-description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
             officiis sit cum soluta recusandae nam distinctio voluptate

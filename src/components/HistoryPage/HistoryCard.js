@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "../../context/historyContext";
+import { useWatchLater } from "../../context/watchLaterContext";
 const HistoryCard = ({ item }) => {
   const [dropdown, setDropdown] = useState(false);
   const trimHeading = (word, n) => {
@@ -9,6 +10,12 @@ const HistoryCard = ({ item }) => {
     }
     return word;
   };
+  const {
+    getWatchLaterVideos,
+    removeItemFromWatchLater,
+    addItemToWatchLater,
+    watchLaterVideos,
+  } = useWatchLater();
   const { removeVideoFromHistory } = useHistory();
   return (
     <div className="category" key={item._id}>
@@ -35,6 +42,17 @@ const HistoryCard = ({ item }) => {
             ></i>
             {dropdown && (
               <ul className="card-dropdown">
+                {watchLaterVideos.some((it) => it._id === item._id) ? (
+                  <li onClick={() => removeItemFromWatchLater(item._id)}>
+                    <i className="fa-regular fa-clock dropIcon"></i>
+                    Remove to watch later
+                  </li>
+                ) : (
+                  <li onClick={() => addItemToWatchLater(item)}>
+                    <i className="fa-regular fa-clock dropIcon"></i>
+                    Add to watch later
+                  </li>
+                )}
                 <li onClick={() => removeVideoFromHistory(item._id)}>
                   <i className="fa-regular fa-clock dropIcon"></i>Remove From
                   History
