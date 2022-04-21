@@ -21,36 +21,14 @@ function App() {
   const location = useLocation();
   return (
     <div className="App">
-      {/* {location.pathname === "/" ||
-      location.pathname === "/liked" ||
-      location.pathname === "/playlist" ||
-      location.pathname === "/history" ||
-      location.pathname === "/singlevideo/:videoId" ||
-      location.pathname === "/watchlater" ||
-      location.pathname === "/explore" ? (
-        <NavBar />
-      ) : null}
-
-      {location.pathname === "/" ||
-      location.pathname === "/liked" ||
-      location.pathname === "/playlist" ||
-      location.pathname === "/history" ||
-      location.pathname === "/watchlater" ||
-      location.pathname === "/singlevideo/:videoId" ||
-      location.pathname === "/explore" ? (
-        <Sidebar />
-      ) : null} */}
       <NavBar />
       <Sidebar />
-
       <Routes>
         <Route path="/" element={<HomePage />} />
-
         <Route path="/liked" element={<LikedPage />} />
         <Route path="/playlist" element={<PlaylistPage />} />
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/singlevideo/:videoId" element={<SingleVideoPage />} />
-
         <Route element={<RestrictAuth />}>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />

@@ -58,7 +58,7 @@ const FeaturedCard = ({ item }) => {
                 {watchLaterVideos.some((it) => it._id === item._id) ? (
                   <li onClick={() => removeItemFromWatchLater(item._id)}>
                     <i className="fa-regular fa-clock dropIcon"></i>
-                    Remove to watch later
+                    Remove from watch later
                   </li>
                 ) : (
                   <li onClick={() => addItemToWatchLater(item)}>

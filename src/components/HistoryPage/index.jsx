@@ -49,27 +49,6 @@ const HistoryPage = () => {
         </div>
       </section>
     </main>
-
-    /* {HistoryData.length > 0 ? (
-        <div className="position-relative">
-          <button
-            className="btn-clear-all font-semibold"
-            onClick={() => clearHistory()}
-          >
-            Clear All
-          </button>
-          <h4 className="pdl-3 pdt-3 font-semibold">
-            History{" "}
-            <small className="text-base font-normal pdl-0-5">
-              {HistoryData.length === 1
-                ? "1 video"
-                : `${HistoryData.length} videos`}
-            </small>
-          </h4>
-        </div>
-      ) : (
-        <h4 className="pdl-3 pdt-3 font-semibold">History Empty</h4>
-      )} */
   );
 };
 
