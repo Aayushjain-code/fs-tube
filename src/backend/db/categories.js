@@ -3,14 +3,18 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "Benifits Of Organic",
+    categoryName: "All",
   },
   {
     _id: uuid(),
-    categoryName: "Basic Nutrition",
+    categoryName: "Breakfast",
   },
   {
     _id: uuid(),
-    categoryName: "Farming Basics",
+    categoryName: "Lunch",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Dinner",
   },
 ];

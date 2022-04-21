@@ -1,40 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./FeaturedCard.css";
-import { useWatchLater } from "../../context/watchLaterContext";
 import { useHistory } from "../../context/historyContext";
-
-const FeaturedCard = ({ item }) => {
+import { useWatchLater } from "../../context/watchLaterContext";
+const HistoryCard = ({ item }) => {
   const [dropdown, setDropdown] = useState(false);
-
   const trimHeading = (word, n) => {
     if (word.length > n) {
       return word.substring(0, n - 3) + "...";
     }
     return word;
   };
-  // const { _id, title, thumbnail, channel, profile, views, playbackTime } = item;
   const {
     getWatchLaterVideos,
     removeItemFromWatchLater,
     addItemToWatchLater,
     watchLaterVideos,
   } = useWatchLater();
-
-  const { addVideoToHistory } = useHistory();
-
-  useEffect(() => {
-    getWatchLaterVideos();
-  }, []);
-
+  const { removeVideoFromHistory } = useHistory();
   return (
     <div className="category" key={item._id}>
       <div className="box-container">
         <div className="box">
-          <Link
-            to={`/singlevideo/${item._id}`}
-            onClick={() => addVideoToHistory(item)}
-          >
+          <Link to={`/singlevideo/${item._id}`}>
             <div className="image">
               <img src={item.imageUrl} alt="" />
             </div>
@@ -58,7 +45,7 @@ const FeaturedCard = ({ item }) => {
                 {watchLaterVideos.some((it) => it._id === item._id) ? (
                   <li onClick={() => removeItemFromWatchLater(item._id)}>
                     <i className="fa-regular fa-clock dropIcon"></i>
-                    Remove from watch later
+                    Remove to watch later
                   </li>
                 ) : (
                   <li onClick={() => addItemToWatchLater(item)}>
@@ -66,9 +53,9 @@ const FeaturedCard = ({ item }) => {
                     Add to watch later
                   </li>
                 )}
-
-                <li>
-                  <i className="fa-solid fa-list dropIcon"></i>Add to playlist
+                <li onClick={() => removeVideoFromHistory(item._id)}>
+                  <i className="fa-regular fa-clock dropIcon"></i>Remove From
+                  History
                 </li>
               </ul>
             )}
@@ -79,4 +66,4 @@ const FeaturedCard = ({ item }) => {
   );
 };
 
-export default FeaturedCard;
+export default HistoryCard;

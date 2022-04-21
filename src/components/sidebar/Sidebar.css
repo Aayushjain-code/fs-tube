@@ -2,16 +2,16 @@
 	position: fixed;
 	top: 0.5rem;
 	margin-left: 2rem;
-	margin-top: 14rem;
-	width: 12rem;
+	margin-top: 10rem;
+	width: 13rem;
 	background-color:var(--bg-color-1);
-	max-height: 50rem;
-	border-radius:4rem;
+	max-height: 60rem;
+	border-radius:1rem;
 }
 
 .sidebar-heading{
 	font-size: 2rem;
-	margin-left: 3rem;
+	margin-left: 3.5rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
