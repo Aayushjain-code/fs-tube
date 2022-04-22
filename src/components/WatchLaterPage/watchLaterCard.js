@@ -22,8 +22,8 @@ const WatchLaterCard = ({ item, watchLaterVideos }) => {
       <div className="box-container">
         <div className="box">
           <Link
-            onclick={(() => console.log(item), addVideoToHistory(item))}
             to={`/singlevideo/${item._id}`}
+            onclick={() => addVideoToHistory(item)}
           >
             <div className="image">
               <img src={item.imageUrl} alt={item.title} loading="lazy" />

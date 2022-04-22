@@ -45,7 +45,7 @@ const NavBar = () => {
               onClick={() => logout()}
             >
               Logout
-              <i class="fas fa-user fasIcon"></i>
+              <i className="fas fa-user fasIcon"></i>
             </div>
           ) : (
             <div
@@ -54,7 +54,7 @@ const NavBar = () => {
               onClick={() => Navigate("/login")}
             >
               Login
-              <i class="fa-solid fa-fingerprint fasIcon"></i>
+              <i className="fa-solid fa-fingerprint fasIcon"></i>
             </div>
           )}
         </div>

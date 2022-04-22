@@ -50,7 +50,6 @@ const HistoryProvider = ({ children }) => {
   const addVideoToHistory = async (video) => {
     try {
       dispatch({ type: "LOADING" });
-      console.log("hiii", video);
       const response = await axios.post("/api/user/history", { video }, config);
       if (response.status === 201) {
         dispatch({ type: "SUCCESS", payload: response.data.history });

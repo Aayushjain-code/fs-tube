@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useWatchLater } from "../../context/watchLaterContext";
-import { useLikedVideo } from "../../context/likedVideoContext";
 import Loader from "../../assets/loader/Loader.js";
 import "./liked.css";
 import WatchLaterCard from "./watchLaterCard";
@@ -12,8 +11,6 @@ const WatchLaterPage = () => {
     isWatchLaterVideoLoading,
     watchlaterVideoError,
   } = useWatchLater();
-
-  const { getLikedVideos, LikedVideos } = useLikedVideo();
 
   useEffect(() => {
     getLikedVideos();
