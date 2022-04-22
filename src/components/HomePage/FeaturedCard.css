@@ -19,11 +19,11 @@
 
 
 .creatorName {
-	font-size: 1.4rem;
+	font-size: 1rem;
 	font-weight: 500;
 	position: absolute;
-	left: 5rem;
-	top: 2.5rem;
+	left: 0rem;
+	top: 3rem;
 	border-radius: 0.5rem;
 	padding: 0.2rem 0.4rem;
 	color: var(--text-color-1);
@@ -31,11 +31,11 @@
 }
 
 .durationVideo {
-	font-size: 1.2rem;
+	font-size: 1rem;
 	font-weight: 800;
 	position: absolute;
 	left: 12rem;
-	top: 2.5rem;
+	top: 3rem;
 	border-radius: 0.5rem;
 	padding: 0.2rem 0.4rem;
 	color: var(--text-color-1);
@@ -43,10 +43,10 @@
 }
 
 .viewsCount {
-	font-size: 1.2rem;
+	font-size: 1rem;
 	position: absolute;
 	right: -3rem;
-	top: 2.5rem;
+	top: 3.1rem;
 	border-radius: 0.5rem;
 	padding: 0.2rem 0.4rem;
 	color: var(--text-color-1);

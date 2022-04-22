@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useWatchLater } from "../../context/watchLaterContext";
 import { useHistory } from "../../context/historyContext";
+import { useWatchLater } from "../../context/watchLaterContext";
 
 const SingleVideoFeaturedCard = ({ item }) => {
   const [dropdown, setDropdown] = useState(false);
@@ -33,14 +33,14 @@ const SingleVideoFeaturedCard = ({ item }) => {
             onClick={() => addVideoToHistory(item)}
           >
             <div className="image">
-              <img src={item.imageUrl} alt="" />
+              <img src={item.imageUrl} alt={item.title} loading="lazy" />
             </div>
           </Link>
           <div className="content">
             <img
               className="md-avatar avatar"
-              src="https://boredhumans.b-cdn.net/faces2/606.jpg"
-              alt="user"
+              src={item.authorImageUrl}
+              alt={item.author}
             />
             <h4 className="contentTitle">{trimHeading(item.title, 22)}</h4>
             <span className="durationVideo">{item.timeDuration}</span>

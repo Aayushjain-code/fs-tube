@@ -22,17 +22,17 @@ const WatchLaterCard = ({ item, watchLaterVideos }) => {
       <div className="box-container">
         <div className="box">
           <Link
+            onclick={(() => console.log(item), addVideoToHistory(item))}
             to={`/singlevideo/${item._id}`}
-            onclick={() => addVideoToHistory(item)}
           >
             <div className="image">
-              <img src={item.imageUrl} alt="" loading="lazy" />
+              <img src={item.imageUrl} alt={item.title} loading="lazy" />
             </div>
           </Link>
           <div className="content">
             <img
               className="md-avatar avatar"
-              src="https://boredhumans.b-cdn.net/faces2/606.jpg"
+              src={item.authorImageUrl}
               alt="user"
             />
             <h4 className="contentTitle">{trimHeading(item.title, 22)}</h4>
@@ -49,7 +49,7 @@ const WatchLaterCard = ({ item, watchLaterVideos }) => {
                 watchLaterVideos.some((it) => it._id === item._id) ? ( */}
                 <li onClick={() => removeItemFromWatchLater(item._id)}>
                   <i className="fa-regular fa-clock dropIcon"></i>
-                  Remove to watch later
+                  Remove from watch later
                 </li>
                 {/* ) : (
                   <li onclick={() => addItemToWatchLater(item)}>

@@ -35,8 +35,8 @@ const HomePage = () => {
           <div>
             <img
               className="banner"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1uSkKDgMvPF5dBoDyGpuDIioVAaUZ3q4-8A&usqp=CAU"
-              alt=""
+              src="https://images.squarespace-cdn.com/content/v1/57f1462015d5dbf1ae364486/1478095239581-DRBA199HPCGNJ76OZRHK/Screen+Shot+2016-10-24+at+15.05.26.png"
+              alt="banner"
             />
             <button className="button btn-warning banner-button">
               <Link className="btn-hero font-bold text-base" to="/explore">

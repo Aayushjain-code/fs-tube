@@ -8,11 +8,13 @@
 
 .banner-button {
 	font-size: large;
-	width: 30rem;
+	width: 40rem;
 	padding: 1.5rem;
 	position: absolute;
-	top: 32rem;
-	left: 15rem;
+	top: 30rem;
+	left: 44rem;
+	background-color:var(--secondary);
+	color:var(--text-color-3) !important;
 }
 
 .category-filter {

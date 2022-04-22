@@ -26,8 +26,9 @@ const SingleVideoCard = ({ singleVideo }) => {
   return (
     <div className="singleVideoCard">
       <iframe
-        width="100%"
-        height="500px"
+        // width="100%"
+        width="780px"
+        height="450px"
         frameBorder="0"
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
@@ -41,7 +42,7 @@ const SingleVideoCard = ({ singleVideo }) => {
           <h4 className="singleVid-contentTitle">{singleVideo.title}</h4>
           <img
             className="reg-avatar avatar singleVid-avatar"
-            src="https://boredhumans.b-cdn.net/faces2/606.jpg"
+            src={singleVideo.authorImageUrl}
             alt="user"
           />
           <span className="singleVid-durationVideo">
@@ -75,9 +76,6 @@ const SingleVideoCard = ({ singleVideo }) => {
           <p className="singleVid-description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
             officiis sit cum soluta recusandae nam distinctio voluptate
-            expedita! Voluptas placeat tempora necessitatibus earum tempore. Quo
-            ullam explicabo doloribus itaque quod facilis quos minima, error
-            architecto voluptate necessitatibus? Fugit, eum omnis.
           </p>
         </div>
       </div>

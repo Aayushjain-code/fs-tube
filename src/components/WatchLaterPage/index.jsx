@@ -24,9 +24,9 @@ const WatchLaterPage = () => {
     <main className="flex-r">
       <section className="home">
         {watchLaterVideos.length > 0 ? (
-          <div className="position-relative">
-            <h4 className="pdl-3 pdt-3 font-semibold">
-              watchLaterVideos{" : "}
+          <div>
+            <h4 className="singleVid-contentTitle">
+              Watch Later Videos{" : "}
               <span>
                 {watchLaterVideos.length === 1
                   ? "1 video"
@@ -35,7 +35,7 @@ const WatchLaterPage = () => {
             </h4>
           </div>
         ) : (
-          <h4 className="pdl-3 pdt-3 font-semibold">WatchLater Empty</h4>
+          <h4>WatchLater Empty</h4>
         )}
         <div className="main-container">
           {isWatchLaterVideoLoading ? (

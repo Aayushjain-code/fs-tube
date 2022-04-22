@@ -17,4 +17,8 @@ export const categories = [
     _id: uuid(),
     categoryName: "Dinner",
   },
+  {
+    _id: uuid(),
+    categoryName: "Snacks",
+  },
 ];

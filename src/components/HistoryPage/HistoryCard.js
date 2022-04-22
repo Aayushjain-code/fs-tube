@@ -23,13 +23,13 @@ const HistoryCard = ({ item }) => {
         <div className="box">
           <Link to={`/singlevideo/${item._id}`}>
             <div className="image">
-              <img src={item.imageUrl} alt="" />
+              <img src={item.imageUrl} alt={item.title} loading="lazy" />
             </div>
           </Link>
           <div className="content">
             <img
               className="md-avatar avatar"
-              src="https://boredhumans.b-cdn.net/faces2/606.jpg"
+              src={item.authorImageUrl}
               alt="user"
             />
             <h4 className="contentTitle">{trimHeading(item.title, 22)}</h4>
