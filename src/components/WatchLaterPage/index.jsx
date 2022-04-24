@@ -13,7 +13,6 @@ const WatchLaterPage = () => {
   } = useWatchLater();
 
   useEffect(() => {
-    getLikedVideos();
     getWatchLaterVideos();
   }, []);
 
