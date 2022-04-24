@@ -35,9 +35,6 @@ const sidebar = () => {
             <i className="fa-solid fa-thumbs-up"></i>Liked
           </p>
         </Link>
-
-        {/* <p className="sidebar-heading ">Components</p> */}
-        {/* <li className="p1"><a className="link text-decor-none" href="#typography">Typography</a></li> */}
       </ul>
     </aside>
   );
