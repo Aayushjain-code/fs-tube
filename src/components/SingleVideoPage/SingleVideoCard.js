@@ -18,6 +18,7 @@ const SingleVideoCard = ({ singleVideo }) => {
     removeItemFromLikedVideos,
     LikedVideos,
   } = useLikedVideo();
+
   useEffect(() => {
     getWatchLaterVideos();
     getLikedVideos();
@@ -32,7 +33,6 @@ const SingleVideoCard = ({ singleVideo }) => {
         frameBorder="0"
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
-        // src="https://www.youtube.com/embed/bvNHJJ3Loy8"
         src={`https://www.youtube.com/embed/${singleVideo.url}`}
         title="Youtube video"
       ></iframe>
@@ -52,10 +52,23 @@ const SingleVideoCard = ({ singleVideo }) => {
           <span className="singleVid-viewsCount">
             Views:{singleVideo.views}
           </span>
-
-          <button className="m1 button btn-primary btn-with-icon">
-            <i className="p1-right fa-solid fa-thumbs-up"></i>Add to Liked
-          </button>
+          {LikedVideos.some((it) => it._id === singleVideo._id) ? (
+            <button
+              className="m1 button btn-primary btn-with-icon"
+              onClick={() => removeItemFromLikedVideos(singleVideo._id)}
+            >
+              <i className="p1-right fa-solid fa-thumbs-up"></i>
+              Remove from Liked
+            </button>
+          ) : (
+            <button
+              className="m1 button btn-primary btn-with-icon"
+              onClick={() => addItemToLikedVideos(singleVideo)}
+            >
+              <i className="p1-right fa-solid fa-thumbs-up"></i>
+              Add to Liked
+            </button>
+          )}
 
           {watchLaterVideos.some((it) => it._id === singleVideo._id) ? (
             <button
@@ -73,6 +86,7 @@ const SingleVideoCard = ({ singleVideo }) => {
               <i className="p1-right fa-regular fa-clock"></i>Add to Watchlater
             </button>
           )}
+
           <p className="singleVid-description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
             officiis sit cum soluta recusandae nam distinctio voluptate
