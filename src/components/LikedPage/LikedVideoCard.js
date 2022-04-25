@@ -3,15 +3,11 @@ import { Link } from "react-router-dom";
 import { useHistory } from "../../context/historyContext";
 import { useLikedVideo } from "../../context/likedVideoContext";
 import { useWatchLater } from "../../context/watchLaterContext";
+import { trimHeading } from "../../utils/Utilities/utilFunctions";
 
 const LikedCard = ({ item, watchLaterVideos, LikedVideos }) => {
   const [dropdown, setDropdown] = useState(false);
-  const trimHeading = (word, n) => {
-    if (word.length > n) {
-      return word.substring(0, n - 3) + "...";
-    }
-    return word;
-  };
+
   const { removeItemFromWatchLater, addItemToWatchLater } = useWatchLater();
   const { addItemToLikedVideos, removeItemFromLikedVideos } = useLikedVideo();
   const { addVideoToHistory } = useHistory();
