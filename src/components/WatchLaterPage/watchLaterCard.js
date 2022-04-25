@@ -2,18 +2,17 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "../../context/historyContext";
 import { useWatchLater } from "../../context/watchLaterContext";
+import { trimHeading } from "../../utils/Utilities/utilFunctions";
 
-const WatchLaterCard = ({ item, watchLaterVideos }) => {
+const WatchLaterCard = ({ item }) => {
   const [dropdown, setDropdown] = useState(false);
-  const trimHeading = (word, n) => {
-    if (word.length > n) {
-      return word.substring(0, n - 3) + "...";
-    }
-    return word;
-  };
 
-  const { getWatchLaterVideos, removeItemFromWatchLater, addItemToWatchLater } =
-    useWatchLater();
+  const {
+    getWatchLaterVideos,
+    removeItemFromWatchLater,
+    addItemToWatchLater,
+    watchLaterVideos,
+  } = useWatchLater();
 
   const { addVideoToHistory } = useHistory();
 

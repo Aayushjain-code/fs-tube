@@ -3,16 +3,10 @@ import { Link } from "react-router-dom";
 import "./FeaturedCard.css";
 import { useWatchLater } from "../../context/watchLaterContext";
 import { useHistory } from "../../context/historyContext";
-
+import { trimHeading } from "../../utils/Utilities/utilFunctions";
 const FeaturedCard = ({ item }) => {
   const [dropdown, setDropdown] = useState(false);
 
-  const trimHeading = (word, n) => {
-    if (word.length > n) {
-      return word.substring(0, n - 3) + "...";
-    }
-    return word;
-  };
   // const { _id, title, thumbnail, channel, profile, views, playbackTime } = item;
   const {
     getWatchLaterVideos,

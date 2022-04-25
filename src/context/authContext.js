@@ -98,7 +98,6 @@ const AuthProvider = ({ children }) => {
         email: userEmail,
         password: userPass,
       });
-      console.log("test", response);
       if (response.status === 200) {
         localStorage.setItem("videoToken", response.data.encodedToken);
         authDispatch({ type: "LOGIN", payload: response.data.foundUser });

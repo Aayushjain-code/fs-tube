@@ -1,33 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "../../context/historyContext";
+import { useLikedVideo } from "../../context/likedVideoContext";
 import { useWatchLater } from "../../context/watchLaterContext";
 import { trimHeading } from "../../utils/Utilities/utilFunctions";
 
-const SingleVideoFeaturedCard = ({ item }) => {
+const LikedCard = ({ item, watchLaterVideos, LikedVideos }) => {
   const [dropdown, setDropdown] = useState(false);
 
-  const {
-    getWatchLaterVideos,
-    removeItemFromWatchLater,
-    addItemToWatchLater,
-    watchLaterVideos,
-  } = useWatchLater();
-
+  const { removeItemFromWatchLater, addItemToWatchLater } = useWatchLater();
+  const { addItemToLikedVideos, removeItemFromLikedVideos } = useLikedVideo();
   const { addVideoToHistory } = useHistory();
-
-  useEffect(() => {
-    getWatchLaterVideos();
-  }, []);
-
   return (
     <div className="category" key={item._id}>
       <div className="box-container">
         <div className="box">
-          <Link
-            to={`/singlevideo/${item._id}`}
-            onClick={() => addVideoToHistory(item)}
-          >
+          <Link to={`/singlevideo/${item._id}`}>
             <div className="image">
               <img src={item.imageUrl} alt={item.title} loading="lazy" />
             </div>
@@ -36,7 +24,7 @@ const SingleVideoFeaturedCard = ({ item }) => {
             <img
               className="md-avatar avatar"
               src={item.authorImageUrl}
-              alt={item.author}
+              alt="user"
             />
             <h4 className="contentTitle">{trimHeading(item.title, 22)}</h4>
             <span className="durationVideo">{item.timeDuration}</span>
@@ -59,8 +47,20 @@ const SingleVideoFeaturedCard = ({ item }) => {
                     Add to watch later
                   </li>
                 )}
+                {LikedVideos.some((it) => it._id === item._id) ? (
+                  <li onClick={() => removeItemFromLikedVideos(item._id)}>
+                    <i className="fa-regular fa-clock dropIcon"></i>
+                    Remove to Liked
+                  </li>
+                ) : (
+                  <li onClick={() => addItemToLikedVideos(item)}>
+                    <i className="fa-regular fa-clock dropIcon"></i>
+                    Add to Liked Again
+                  </li>
+                )}
                 <li>
-                  <i className="fa-solid fa-list dropIcon"></i>Add to playlist
+                  <i className="fa-regular fa-clock dropIcon"></i>Add to
+                  Playlist
                 </li>
               </ul>
             )}
@@ -71,4 +71,4 @@ const SingleVideoFeaturedCard = ({ item }) => {
   );
 };
 
-export default SingleVideoFeaturedCard;
+export default LikedCard;

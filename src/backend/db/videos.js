@@ -233,7 +233,7 @@ export const videos = [
     authorImageUrl: profileUrls.FitTuber,
     imageUrl: "https://i3.ytimg.com/vi/ucOmGiNg1kg/maxresdefault.jpg",
     rating: 1,
-    category: "C",
+    category: "Snacks",
     isMustWatch: false,
   },
   {
