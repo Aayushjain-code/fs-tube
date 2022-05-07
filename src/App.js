@@ -17,6 +17,9 @@ import { RestrictAuth } from "./components/ReqResAuth/RestrictAuth";
 import { RequireAuth } from "./components/ReqResAuth/RequireAuth";
 import SingleVideoPage from "./components/SingleVideoPage/SingleVideo";
 
+import PlaylistDetails from "./components/PlaylistPage/PlaylistDetails";
+import SingleVideoPlaylist from "./components/PlaylistPage/SingleVideoPlaylist";
+
 function App() {
   const location = useLocation();
   return (
@@ -27,6 +30,16 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/liked" element={<LikedPage />} />
         <Route path="/playlist" element={<PlaylistPage />} />
+        <Route
+          path="/playlist/:playlistId"
+          element={<PlaylistDetails />}
+          exact
+        />
+        <Route
+          path="/playlist/:singleplaylistId/:singlevideoId"
+          element={<SingleVideoPlaylist />}
+          exact
+        />
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/singlevideo/:videoId" element={<SingleVideoPage />} />
         <Route element={<RestrictAuth />}>
