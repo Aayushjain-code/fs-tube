@@ -28,8 +28,6 @@ function App() {
       <Sidebar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/liked" element={<LikedPage />} />
-        <Route path="/playlist" element={<PlaylistPage />} />
         <Route
           path="/playlist/:playlistId"
           element={<PlaylistDetails />}
@@ -47,6 +45,8 @@ function App() {
           <Route path="/signup" element={<Signup />} />
         </Route>
         <Route element={<RequireAuth />}>
+          <Route path="/liked" element={<LikedPage />} />
+          <Route path="/playlist" element={<PlaylistPage />} />
           <Route path="/watchlater" element={<WatchLaterPage />} />
           <Route path="/history" element={<HistoryPage />} />
         </Route>
