@@ -21,7 +21,7 @@ const PlaylistPage = () => {
         {playlists.length > 0 ? (
           <div className="position-relative">
             <h4 className="pdl-3 pdt-3 font-semibold">
-              playlists{" : "}
+              Playlists {" : "}
               <span>
                 {playlists.length === 1
                   ? "1 video"

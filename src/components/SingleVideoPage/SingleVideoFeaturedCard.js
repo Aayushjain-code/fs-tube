@@ -60,9 +60,9 @@ const FeaturedCard = ({ item }) => {
     removeVideoFromPlaylistLoading,
   ]);
 
-  useEffect(() => {
-    console.log("playlists:", playlists);
-  });
+  // useEffect(() => {
+  //   console.log("playlists:", playlists);
+  // });
 
   useEffect(() => {
     setTimeout(() => {
@@ -159,7 +159,7 @@ const FeaturedCard = ({ item }) => {
             <div className="playlist-first-div">
               <h3 className="h3 playlist-saveTo-text">Save to...</h3>
               <i
-                class="fas fa-times playlist-cross"
+                className="fas fa-times playlist-cross"
                 onClick={() => setIsSavetoPlaylistClicked(false)}
               ></i>
             </div>
@@ -187,7 +187,7 @@ const FeaturedCard = ({ item }) => {
                 setIsSavetoPlaylistClicked(true);
               }}
             >
-              <i class="fas fa-plus playlist-plus"></i>
+              <i className="fas fa-plus playlist-plus"></i>
               <h3 className="h3 new-plyalist-head">Create New Playlist</h3>
             </div>
 

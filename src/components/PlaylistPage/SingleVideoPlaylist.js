@@ -7,8 +7,8 @@ import { useLikedVideo } from "../../context/likedVideoContext";
 import { useSingleVideo } from "../../context/singleVideoContext";
 import { useVideo } from "../../context/videoContext";
 import LoaderSvg from "../../assets/loader/Loader";
-import FeaturedCard from "../HomePage/FeaturedCard";
-import SingleVideoFeaturedCard from "../SingleVideoPage/SingleVideoFeaturedCard";
+import FeaturedCard from "./SingleVideoFeaturedCard";
+import SingleVideoFeaturedCard from "./SingleVideoFeaturedCard";
 import { usePlaylist } from "../../context/playlistContext";
 
 const SingleVideoPage = () => {
@@ -40,6 +40,7 @@ const SingleVideoPage = () => {
     // Used set timeout because the playlist videos
     // needs to be filtered after we fetch from getVideosFromPlaylist
   }, [playlistLoading]);
+
   return (
     <>
       <main className="flex-r">
@@ -63,7 +64,7 @@ const SingleVideoPage = () => {
                   <SingleVideoFeaturedCard item={item} key={item._id} />
                 ))
             ) : (
-              <div>Failed to load recommended videos</div>
+              <div>Only Single Video in Playlist</div>
             )}
           </section>
         </div>

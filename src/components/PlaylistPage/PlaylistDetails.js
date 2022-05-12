@@ -33,6 +33,13 @@ const PlaylistDetails = () => {
       <section className="home">
         {playlist?.videos?.length > 0 ? (
           <div className="position-relative">
+            <button
+              className="button btn-error link-to-view"
+              onClick={() => removePlaylist(playlistId)}
+            >
+              Clear Playlist <i className="fa-solid fa-trash-can"></i>
+            </button>
+
             <h4 className="pdl-3 pdt-3 font-semibold">
               {`${playlist.title} Playlist`}{" "}
               <span>

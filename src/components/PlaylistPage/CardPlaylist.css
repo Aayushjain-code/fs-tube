@@ -1,38 +1,14 @@
 
 
 
-
-.card-playlist {
-    height: fit-content;
-    width: 17rem;
-}
-
-.container-img-card-playlist {
-    width: 17rem;
-    height: 11rem;
-    position: relative;
-}
-
-.img-card-playlist {
-    width: inherit;
-    height: inherit;
-}
-
 .container-overlay-img-playlist-card {
-    width: 6rem;
-    height: 11rem;
+    width: 18rem;
+    height: 20rem;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 2rem;
+    right: 2rem;
+    border-radius:0.2rem;
     background-color: var(--playlist-card-overlay-background-color)
-}
-
-.btn-view-playlist {
-    color: var(--text-color-dark);
-}
-
-.btn-view-playlist:hover {
-    color: var(--text-color);
 }
 
 .disable-link {
@@ -49,12 +25,31 @@
     top: 0;
     right: 0;
 }
-
-
-
 .nav-button{
     display: flex;
     position: absolute;
     bottom: -1.5rem;
     left: 10rem;
+}
+
+
+.play-icon{
+    font-size: 4rem;
+    color: var(--text-color-3);
+    position: relative;
+    top: 8rem;
+    left: 4rem;
+}
+
+
+.playlist-control{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+   left: 2rem;
+}
+
+.link-to-view{
+text-decoration: none;
+color:var(--text-color-2);
 }

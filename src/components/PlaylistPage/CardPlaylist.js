@@ -20,49 +20,53 @@ const CardPlaylist = ({ playlist }) => {
     <div className="category" key={playlist._id}>
       <div className="box-container">
         <div className="box">
+          <div className="image">
+            {playlist?.videos?.length === 0 ? (
+              <img
+                className="img-card-playlist"
+                src={PlaylistEmptyImage}
+                loading="lazy"
+                alt="image-empty-playlist"
+              />
+            ) : (
+              <img
+                className="img-card-playlist"
+                src={src}
+                loading="lazy"
+                alt={alt}
+              />
+            )}
+          </div>
           <Link
+            className={`${
+              playlist?.videos?.length === 0 ? "disable-link" : "cursor-pointer"
+            } container-overlay-img-playlist-card flex flex-justify-center flex-align-center`}
             to={`/playlist/${playlist?._id}/${playlist?.videos[0]?._id}`}
-            onClick={() => addVideoToHistory(playlist)}
+            onClick={() => addVideoToHistory(playlist?.videos[0])}
           >
-            <div className="image">
-              {playlist?.videos?.length === 0 ? (
-                <img
-                  className="img-card-playlist"
-                  src={PlaylistEmptyImage}
-                  loading="lazy"
-                  alt="image-empty-playlist"
-                />
-              ) : (
-                <img
-                  className="img-card-playlist"
-                  src={src}
-                  loading="lazy"
-                  alt={alt}
-                />
-              )}
+            <div className="play-icon">
+              <h4 className="contentTitle">
+                {trimHeading(playlist.title, 22)}
+              </h4>
+              <span className="font-semibold">{playlist?.videos?.length}</span>{" "}
+              <i className="fa-solid fa-play material-icons-outlined text-4xl"></i>
             </div>
-            {/* <div className="flex flex-column">
-              <span className="font-semibold">{playlist?.videos?.length}</span>
-              <span className="material-icons-outlined text-4xl">
-                playlist_play
-              </span>
-            </div> */}
           </Link>
-          <div className="content">
-            <h4 className="contentTitle">{trimHeading(playlist.title, 22)}</h4>
 
-            <ul className="card-dropdown nav-button">
-              <li>
-                <Link to={`/playlist/${playlist._id}`}>
-                  <i className="fa-regular fa-clock dropIcon"></i>
-                  view playlist
+          <div className="content">
+            <div className="playlist-control">
+              <button className="button btn-success">
+                <Link to={`/playlist/${playlist._id}`} className="link-to-view">
+                  View playlist
                 </Link>
-              </li>
-              <li onClick={() => removePlaylist(playlist?._id)}>
-                <i className="fa-regular fa-clock dropIcon"></i>
-                Remove
-              </li>
-            </ul>
+              </button>
+              <button
+                className="button btn-error link-to-view"
+                onClick={() => removePlaylist(playlist?._id)}
+              >
+                Remove <i className="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>

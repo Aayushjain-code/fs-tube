@@ -59,9 +59,9 @@ const CardVideo = ({ item }) => {
     removeVideoFromPlaylistLoading,
   ]);
 
-  useEffect(() => {
-    console.log(playlists);
-  });
+  // useEffect(() => {
+  //   console.log(playlists);
+  // });
 
   useEffect(() => {
     setTimeout(() => {

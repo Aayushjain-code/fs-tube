@@ -61,10 +61,6 @@ const FeaturedCard = ({ item }) => {
   ]);
 
   useEffect(() => {
-    console.log("playlists:", playlists);
-  });
-
-  useEffect(() => {
     setTimeout(() => {
       setPlaylistDetails({ ...playlistDetails, isInputError: false });
     }, 2000);
@@ -137,8 +133,8 @@ const FeaturedCard = ({ item }) => {
                 <li
                   onClick={() => {
                     setIsSavetoPlaylistClicked(true);
-                    // setDropdown(!dropdown);
-                    // setIsMoreOptions(false);
+                    setDropdown(!dropdown);
+                    setIsMoreOptions(false);
                   }}
                 >
                   <i className="fa-solid fa-list dropIcon"></i>Add to playlist
@@ -159,7 +155,7 @@ const FeaturedCard = ({ item }) => {
             <div className="playlist-first-div">
               <h3 className="h3 playlist-saveTo-text">Save to...</h3>
               <i
-                class="fas fa-times playlist-cross"
+                className="fas fa-times playlist-cross"
                 onClick={() => setIsSavetoPlaylistClicked(false)}
               ></i>
             </div>
@@ -176,10 +172,6 @@ const FeaturedCard = ({ item }) => {
                 })}
             </div>
 
-            {/* <div className="playlist-second-div">
-              <input type="checkbox" className="playlist-checkbox" />
-              <span className="playlist-title">Title</span>
-            </div> */}
             <div
               className="playlist-third-div"
               onClick={() => {
@@ -187,7 +179,7 @@ const FeaturedCard = ({ item }) => {
                 setIsSavetoPlaylistClicked(true);
               }}
             >
-              <i class="fas fa-plus playlist-plus"></i>
+              <i className="fas fa-plus playlist-plus"></i>
               <h3 className="h3 new-plyalist-head">Create New Playlist</h3>
             </div>
 

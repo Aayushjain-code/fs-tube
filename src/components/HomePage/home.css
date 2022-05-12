@@ -99,7 +99,7 @@
 /* Playlist Styling */
 
 .playlist-main-container {
-	border-radius:0.5rem;
+	border-radius:0.4rem;
 	background-color: var(--bg-color-3);
 	color: var(--text-white);
 	display: flex;
@@ -108,7 +108,7 @@
 	width: fit-content;
 	position: relative;
 	margin-top: -9.5rem;
-	margin-left: -3rem;
+	margin-left: 2rem;
 	z-index: 2;
 
 }
@@ -126,10 +126,6 @@
 	display: flex;
 }
 
-.playlist-second-div {
-	display: flex;
-	gap: 0.5rem
-}
 
 .playlist-title {
 	margin-top: -0.2rem;
