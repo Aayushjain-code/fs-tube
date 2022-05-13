@@ -34,11 +34,11 @@
 
 
 .play-icon{
-    font-size: 4rem;
+    font-size: 3rem;
     color: var(--text-color-3);
     position: relative;
-    top: 8rem;
-    left: 4rem;
+    top: 6rem;
+    left: 6rem;
 }
 
 
@@ -51,5 +51,5 @@
 
 .link-to-view{
 text-decoration: none;
-color:var(--text-color-2);
+color:var(--text-color-3);
 }
