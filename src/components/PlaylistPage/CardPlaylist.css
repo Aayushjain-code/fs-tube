@@ -1,0 +1,55 @@
+
+
+
+.container-overlay-img-playlist-card {
+    width: 18rem;
+    height: 20rem;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    border-radius:0.2rem;
+    background-color: var(--playlist-card-overlay-background-color)
+}
+
+.disable-link {
+    pointer-events: none;
+    cursor: default;
+}
+
+.container-btn-playlist-card {
+    position: relative;
+}
+
+.btn-remove-playlist {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.nav-button{
+    display: flex;
+    position: absolute;
+    bottom: -1.5rem;
+    left: 10rem;
+}
+
+
+.play-icon{
+    font-size: 3rem;
+    color: var(--text-color-3);
+    position: relative;
+    top: 6rem;
+    left: 6rem;
+}
+
+
+.playlist-control{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+   left: 2rem;
+}
+
+.link-to-view{
+text-decoration: none;
+color:var(--text-color-3);
+}

@@ -19,6 +19,10 @@
 
   --background-color: white;
   --danger-color: rgb(223, 0, 0);
+
+  --green:green;
+  --red:red;
+   --playlist-card-overlay-background-color: #85828280;
 }
 
 body {
