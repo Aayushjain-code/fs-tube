@@ -1,15 +1,15 @@
-.sidebar{
+.sidebar {
 	position: fixed;
 	top: 0.5rem;
 	margin-left: 2rem;
 	margin-top: 10rem;
-	width: 13rem;
-	background-color:var(--bg-color-1);
+	width: 14rem;
+	background-color: var(--bg-color-1);
 	max-height: 60rem;
-	border-radius:1rem;
+	border-radius: 1rem;
 }
 
-.sidebar-heading{
+.sidebar-heading {
 	font-size: 2rem;
 	margin-left: 3.5rem;
 	display: flex;
@@ -20,4 +20,15 @@
 	cursor: pointer;
 	padding-top: 2rem;
 	color: var(--text-color-1);
+}
+
+.link {
+	border: none;
+	background-color:var(--background-color2);
+}
+
+.link:hover {
+	background-color:var(--background-color2);
+
+	padding: none;
 }

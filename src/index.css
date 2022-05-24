@@ -18,6 +18,7 @@
   --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
 
   --background-color: white;
+  --background-color2: white;
   --danger-color: rgb(223, 0, 0);
 
   --green:green;
@@ -38,6 +39,7 @@ body.active {
   --bg-color-3: rgb(86, 86, 86);
   --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .4);
   --background-color: rgb(0, 0, 0);
+  --background-color2: #333333;
 }
 
 
