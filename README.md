@@ -1,3 +1,12 @@
 ## Video Library Backend
+Fresh tube is an video library app where you can find video of your favourite dishes.
 
-This folder contains the Mock Backend created for Video Library App. It contains different API end-points and database configuration for building Video Library; so that you can focus on building Frontend.
+## Functionalities added
+
+1. Authentication (login/signup)
+2. Protected Route means authenticated user can only view playlist page, history page, liked page, watchlater page
+3. All the users can view all videos and can get filtered videos based on the category
+
+## Live Preview
+
+https://freshtube.netlify.app/
